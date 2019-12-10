@@ -29,7 +29,7 @@ for i in ballText[::-1]:
     strOfBowler = i.text
     tbowler = strOfBowler.partition(" to")
     sheet1.write(j, 1, tbowler[0])
-    j = j + 1
+    j += 1
 
 #Column for Striker
 sheet1.write(0, 2, 'StrikerList')
@@ -40,7 +40,7 @@ for i in ballText[::-1]:
     tbowler = strOfBowler.partition("to ")
     rpart = tbowler[2].partition(",")
     sheet1.write(j, 2, rpart[0])
-    j = j + 1
+    j += 1
 
 #Column for RunList
 sheet1.write(0, 3, 'RunList')
@@ -72,7 +72,7 @@ for i in ballText[::-1]:
         sheet1.write(j, 3, "0")
     else:
         sheet1.write(j, 3, "-")
-    j = j + 1
+    j += 1
 
 wb.save("C:/Users/acer/PycharmProjects/CricbuzzData/ExtractedData/T20-WIvsIND.xls")
 

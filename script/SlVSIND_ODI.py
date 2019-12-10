@@ -17,7 +17,7 @@ sheet1.write(0, 0, 'BallList')  # Row Column Value
 for i in ballList[::-1]:  # -1 is reversing the list so it will start reading from rerversed 1st value
     strOfi = i.text  #
     sheet1.write(j, 0, strOfi)
-    j = j + 1
+    j += 1
 
 # Column for Bowler
 sheet1.write(0, 1, 'BowlerList')
@@ -30,7 +30,7 @@ for i in ballText[::-1]:  # -1 is reversing the list so it will start reading fr
     # Partition is used to Split and it always took 1st Occurence of delimiter
     # Return type of partition is Tuple.
     sheet1.write(j, 1, tbowler[0])
-    j = j + 1
+    j += 1
 
 # Column for Striker
 sheet1.write(0, 2, 'StrikerList')
@@ -41,7 +41,7 @@ for i in ballText[::-1]:  # -1 is reversing the list so it will start reading fr
     tbowler = strOfBowler.partition("to ")
     rpart = tbowler[2].partition(",")
     sheet1.write(j, 2, rpart[0])
-    j = j + 1
+    j += 1
 
 # Column for RunList
 sheet1.write(0, 3, 'RunList')
@@ -75,7 +75,7 @@ for i in ballText[::-1]:
         sheet1.write(j, 4, "Wicket")
     else:
         sheet1.write(j, 3, "-")
-    j = j + 1
+    j += 1
 
 # wb.save("ODI-SLvsIND.xls")
 
