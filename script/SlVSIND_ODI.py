@@ -13,14 +13,14 @@ wb = Workbook()  # Creating object of workbook class
 sheet1 = wb.add_sheet("icc", cell_overwrite_ok=True)  # (cell_overwrite_ok=True ) TO Over write in the same Excel Sheet
 j = 1
 # Column for Balls
-sheet1.write(0, 0, 'BallList')  # Row Column Value
+sheet1.write(0, 0, 'Ball')  # Row Column Value
 for i in ballList[::-1]:  # -1 is reversing the list so it will start reading from rerversed 1st value
     strOfi = i.text  #
     sheet1.write(j, 0, strOfi)
     j += 1
 
 # Column for Bowler
-sheet1.write(0, 1, 'BowlerList')
+sheet1.write(0, 1, 'Bowler')
 if j != 1:
     j = 1
 for i in ballText[::-1]:  # -1 is reversing the list so it will start reading from rerversed 1st value
@@ -33,7 +33,7 @@ for i in ballText[::-1]:  # -1 is reversing the list so it will start reading fr
     j += 1
 
 # Column for Striker
-sheet1.write(0, 2, 'StrikerList')
+sheet1.write(0, 2, 'Striker')
 if j != 1:
     j = 1
 for i in ballText[::-1]:  # -1 is reversing the list so it will start reading from rerversed 1st value
@@ -44,7 +44,7 @@ for i in ballText[::-1]:  # -1 is reversing the list so it will start reading fr
     j += 1
 
 # Column for RunList
-sheet1.write(0, 3, 'RunList')
+sheet1.write(0, 3, 'Run')
 sheet1.write(0, 4, "Wickets")
 if j != 1:
     j = 1

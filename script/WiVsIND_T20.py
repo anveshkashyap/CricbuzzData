@@ -14,14 +14,14 @@ wb = Workbook()
 sheet1 = wb.add_sheet("icc", cell_overwrite_ok=True)
 j = 1
 #Column for Balls
-sheet1.write(0, 0, 'BallList')
+sheet1.write(0, 0, 'Ball')
 for i in ballList[::-1]:
     strOfi = i.text
     sheet1.write(j, 0, strOfi)
     j = j+1
 
 # Column for Bowler
-sheet1.write(0, 1, 'BowlerList')
+sheet1.write(0, 1, 'Bowler')
 if j != 1:
     j = 1
 for i in ballText[::-1]:
@@ -32,7 +32,7 @@ for i in ballText[::-1]:
     j += 1
 
 #Column for Striker
-sheet1.write(0, 2, 'StrikerList')
+sheet1.write(0, 2, 'Striker')
 if j != 1:
     j = 1
 for i in ballText[::-1]:
@@ -43,7 +43,8 @@ for i in ballText[::-1]:
     j += 1
 
 #Column for RunList
-sheet1.write(0, 3, 'RunList')
+sheet1.write(0, 3, 'Run')
+sheet1.write(0, 4, "Wickets")
 if j != 1:
     j = 1
 for i in ballText[::-1]:
@@ -70,6 +71,7 @@ for i in ballText[::-1]:
             sheet1.write(j, 3, "1")
     elif strOfBowler.__contains__("out"):
         sheet1.write(j, 3, "0")
+        sheet1.write(j, 4, "Wicket")
     else:
         sheet1.write(j, 3, "-")
     j += 1
