@@ -1,12 +1,12 @@
 from selenium import webdriver
 from xlwt import Workbook
-
 from dataFile import *
 
+print("Program is reading the data from CricBuzz.com..... Please wait.")
+driver = webdriver.Chrome(executable_path=CHROME_PATH)
+driver.implicitly_wait(30)
+driver.maximize_window()
 for i in URL:
-    driver = webdriver.Chrome(executable_path=CHROME_PATH)
-    driver.implicitly_wait(30)
-    driver.maximize_window()
     driver.get(i)
     pageTitle = driver.title
 
@@ -86,4 +86,4 @@ for i in URL:
 
     wb.save(xlsFile)
 
-    driver.close()
+driver.close()
