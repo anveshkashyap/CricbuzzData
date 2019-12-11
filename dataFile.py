@@ -1,6 +1,6 @@
 import os
 
-crPath = os.getcwd().replace("script","").replace('\\','/')
+crPath = os.getcwd().replace("/script","").replace('\\','/')
 print(crPath)
 CHROME_PATH = crPath+"/drivers/chromedriver.exe"
 URL = ["https://www.cricbuzz.com/cricket-scores/15803/wi-vs-ind-2nd-semi-final-icc-world-t20-2016"]
