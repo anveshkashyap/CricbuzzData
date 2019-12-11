@@ -1,16 +1,17 @@
 from selenium import webdriver
 from xlwt import Workbook
+from testData.dataFile import *
 
-driver = webdriver.Chrome(executable_path="C:/Users/acer/PycharmProjects/CricbuzzData/drivers/chromedriver.exe")
+driver = webdriver.Chrome(executable_path=".//drivers/chromedriver.exe")
 driver.implicitly_wait(30)
 driver.maximize_window()
-driver.get("https://www.cricbuzz.com/cricket-scores/20280/sl-vs-ind-match-44-icc-cricket-world-cup-2019")
+driver.get(URL)
 
-ballList = driver.find_elements_by_xpath("//span[contains(@class,'cb-col cb-col-8 text-bold')]")
-ballText = driver.find_elements_by_xpath("//p[contains(@class,'cb-col cb-col-90 cb-com-ln')]")
+ballList = driver.find_elements_by_xpath(XPATH_BALLNO)
+ballText = driver.find_elements_by_xpath(XPATH_BALLTEXT)
 
 wb = Workbook()  # Creating object of workbook class
-sheet1 = wb.add_sheet("icc", cell_overwrite_ok=True)  # (cell_overwrite_ok=True ) TO Over write in the same Excel Sheet
+sheet1 = wb.add_sheet("CricBuzz", cell_overwrite_ok=True)  # (cell_overwrite_ok=True ) TO Over write in the same Excel Sheet
 j = 1
 # Column for Balls
 sheet1.write(0, 0, 'Ball')  # Row Column Value
