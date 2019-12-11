@@ -1,9 +1,10 @@
 from selenium import webdriver
 from xlwt import Workbook
 
-from testData.dataFile import *
+from dataFile import *
+
 for i in URL:
-    driver = webdriver.Chrome(executable_path=".//drivers/chromedriver.exe")
+    driver = webdriver.Chrome(executable_path=CHROME_PATH)
     driver.implicitly_wait(30)
     driver.maximize_window()
     driver.get(i)
@@ -81,7 +82,8 @@ for i in URL:
             sheet1.write(j, 3, "-")
         j += 1
 
-    xlsFile = './/ExtractedData/'+partsOfTitle[0]+'.xls'
+    xlsFile = crPath + "/ExtractedData/" + partsOfTitle[0] + '.xls'
+
     wb.save(xlsFile)
 
     driver.close()
